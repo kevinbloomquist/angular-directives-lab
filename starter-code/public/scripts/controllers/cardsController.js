@@ -19,7 +19,7 @@ function CardsController($http){
   function getQuestions(){
 
 $http
-.get('https://shielded-forest-41789.herokuapp.com/api/flashcards')
+.get('https://localhos')
 .then(function(response){
   console.log(response.data);
   vm.all = response.data;

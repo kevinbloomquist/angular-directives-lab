@@ -36,7 +36,7 @@ app.get('/',function(req,res){
 
 
 app.get('/questions', function(req,res){
-    db.Question.find(function(err,questions){
+    db.questions.find(function(err,questions){
         if(err){return console.log("index error:" + err);
         res.json(questions);
     }
@@ -45,7 +45,7 @@ app.get('/questions', function(req,res){
 });
 
 app.get('/questions/:id',function(req,res){
-    db.Question.findById(req.params.id), function(err,question){
+    db.findById(req.params.id), function(err,question){
     if (err){return console.log("show error:" + err);
     res.json(question);
 }
@@ -66,6 +66,7 @@ app.post('/questions', function(req,res){
         if(err) {return console.log("create error:" + err);}
         console.log("created", question.question);
     res.json(question);
+    console.log(res);
     });
     // questionsList.push(req.body);
     console.log("post hit with:" + req.body);

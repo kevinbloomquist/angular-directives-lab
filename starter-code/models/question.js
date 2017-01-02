@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-mongoose.connect("mongodb://localhost/Questions");
+mongoose.connect("mongodb://localhost/Questions-db");
 
 var QuestionSchema = new Schema({
 	question: String,
@@ -15,5 +15,5 @@ var QuestionSchema = new Schema({
 
 
 
-const Question = mongoose.model('Question',QuestionSchema);
-module.exports = Question;
+const db = mongoose.model('Question',QuestionSchema);
+module.exports = db;

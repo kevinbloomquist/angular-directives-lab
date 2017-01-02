@@ -1,6 +1,6 @@
 const db = require('./models/question.js');
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost/Questions-db");
+// mongoose.connect("mongodb://localhost/Questions-db");
 
 
 
@@ -85,8 +85,8 @@ const questionsList = [
 ];
   
 
-  db.Question.remove({},function(err,questions){
-  	db.Question.create(questionsList,function(err,cards){
+  db.remove({},function(err,questions){
+  	db.create(questionsList,function(err,cards){
   		if (err) {return console.log(err);}
   		console.log("created", questionsList.length, "questions");
   		process.exit();

@@ -19,17 +19,13 @@ function CardsController($http){
   function getQuestions(){
 
 $http
-.get('https://localhos')
-.then(function(response){
-  console.log(response.data);
+.get('http://localhost:3000/questions')
+.then(function(err,response){
+   if(err){return console.log("error:" + err);
+ }
   vm.all = response.data;
 
-  });
-
-}
-
+});
 getQuestions();
 }
-
-
-
+}

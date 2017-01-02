@@ -36,10 +36,10 @@ app.get('/',function(req,res){
 
 
 app.get('/questions', function(req,res){
-    db.questions.find(function(err,questions){
+    db.find(function(err,questions){
         if(err){return console.log("index error:" + err);
-        res.json(questions);
     }
+        res.json(questions);
     });
 	// res.json(questionsList);
 });
